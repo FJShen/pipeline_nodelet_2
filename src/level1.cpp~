@@ -1,0 +1,14 @@
+#include "ros/ros.h"
+#include "helper.h"
+#include <iostream>
+#include <nodelet/nodelet.h>
+#include "std_msgs/UInt8.h"
+
+namespace pipeline_nodelet{
+    virtual void Level1::onInit(){
+	ros::NodeHandle& n = getPrivateNodeHandle();
+	pub = n.advertise<std_msgs::UInt8>("pipe_l1_output", 5);
+	timer = n.createTimer(ros::Duration(0.25), &Level1::timerCallback, this);
+	NODELET_INFO("Level1 node created\n");
+    }
+}

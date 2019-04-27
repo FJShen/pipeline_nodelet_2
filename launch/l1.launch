@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="nodelet" type="nodelet" name="nodelet_l1"
+			args="load pipeline_nodelet_2/Level1 nodelet_manager">
+			<remap from="nodelet_l1/pipe_l1_output" to="pipe_l1_output" />
+	</node>
+</launch>

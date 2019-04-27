@@ -1,0 +1,31 @@
+<launch>
+	<group ns="p">
+	<!--
+		<node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" output="screen" />
+	
+		<node pkg="nodelet" type="nodelet" name="nodelet_l1"
+				args="load pipeline_nodelet_2/Level1 nodelet_manager">
+				<remap from="nodelet_l1/pipe_l1_output" to="pipe_l1_output" />
+		</node>
+	
+		<node pkg="nodelet" type="nodelet" name="nodelet_l2"
+				args="load pipeline_nodelet_2/Level2 nodelet_manager">
+				<remap from="nodelet_l2/pipe_l1_output" to="pipe_l1_output" />
+				<remap from="nodelet_l2/pipe_l2_output" to="pipe_l2_output" />
+		</node>
+	
+		<node pkg="nodelet" type="nodelet" name="nodelet_l3"
+				args="load pipeline_nodelet_2/Level3 nodelet_manager">
+				<remap from="nodelet_l3/pipe_l2_output" to="pipe_l2_output" />
+		</node>	-->
+		
+		<!--These three lines can work exclusively in respect to the above lines.-->
+		
+		<include file="$(find pipeline_nodelet_2)/launch/manager.launch"/>
+		<include file="$(find pipeline_nodelet_2)/launch/l1.launch"/>
+		<include file="$(find pipeline_nodelet_2)/launch/l2.launch"/>
+		<include file="$(find pipeline_nodelet_2)/launch/l3.launch"/>
+		
+		
+	</group>
+</launch>

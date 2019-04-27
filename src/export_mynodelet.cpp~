@@ -1,0 +1,7 @@
+#include <pluginlib/class_list_macros.h>
+#include <nodelet/nodelet.h>
+#include <pipeline_nodelet_2/my_nodes.h>
+
+PLUGINLIB_EXPORT_CLASS(pipeline_nodelet::Level1, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(pipeline_nodelet::Level2, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(pipeline_nodelet::Level3, nodelet::Nodelet);
